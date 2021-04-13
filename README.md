@@ -1,5 +1,7 @@
 # DES
-DES encrypt and decrypt
+DES encrypt (HW2-01) and decrypt (HW2-02)
+
+資訊安全導論 HW2
 
 ***
 
