@@ -93,3 +93,70 @@ DES encrypt and decrypt
     5cd9f8bfaf9f524b9b751259919274cd
     5cd9f8bfaf9f524b9b751259919274cdd6f0f0baf8d55df7
     5cd9f8bfaf9f524b9b751259919274cdd6f0f0baf8d55df75361a5d99c26347c8d6fcc58386c7ecbffc2cc84660cadbec354c7a1a83395d3a226c97030421709
+
+***
+
+# [HW2-02] DES - Decrypt
+## Description
+
+本題請大家實作 DES 解密
+
+<ins>禁止直接使用加解密套件 (e.g. Python 禁止使用 Crypto.Cipher 中的套件)</ins>
+
+* ECB Mode
+
+  本題使用 ECB 模式
+
+  請看 HW2-01 的敘述後反推應該如何處理解密
+
+* Parity bits
+
+  DES 的 Key 長度為 56 bits
+
+  但此題中 Key 長度為 64 bits, 每個 Byte 的最後 1 bit 為 parity bits
+
+  本題實作時請忽略 parity bits
+
+  因此實際上有效 Key 長度仍為 56 bits
+
+  詳細請 Google "DES Key Parity Bits"
+
+* Padding
+
+  解密後的明文結尾的空格請刪除
+
+
+## Input
+
+  每單筆測資會輸入 2 行
+
+  第一行表示 Key K
+
+  第二行表示密文 C
+
+  K 以 [0-9a-f] 組成, 共有 16 個字元, 每 2 個字元組成 1 個 Byte
+
+  C 為 [0-9a-f] 組成, 每 2 個字元組成 1 個 Byte
+
+
+## Output
+
+  每單筆測資需輸出 1 行字串 S
+
+  S 以可視字元與空格組成, 最後一個字元不為空格
+
+
+## Sample Input 1 
+
+    52415020474f4420
+    b7625c9fe4cb43b3843b01843b62431e7fe4dcd031caabe23ec69c6f62c19df721c633352e4f7b998e667e5ffe8bbc17
+    5374727567676c65
+    491a8a2c443a5b760e95ba87d8616a989c4bbacedfcd3d681a11b4ec876ecadd79857582a722f0f21d4d51482e067b32
+    44722e2044726520
+    69fd576d06359ee1a2551302ef9f67d4fdb6380eb49be68b7f13740b96108fa3a4701a8f4ffb0759b2a70fced04427ada7564f285b2005fff4a32e75422ffa26cca99968ffb36ee1875ec09dfef4cfb6
+
+## Sample Output 1
+
+    I'm beginnin' to feel like a Rap God, Rap God
+    It's a struggle every day but you gotta hold on
+    I'm about to lose my mind You've been gone for so long I'm runnin' out of time
